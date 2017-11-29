@@ -1,0 +1,279 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*:not(i){
+  font-family: 'Open Sans Condensed', sans-serif !important;
+  outline: none;
+}
+
+i{
+  cursor: pointer;
+  outline: none;
+}
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #D62929;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+
+#root{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: #4d3bff75;  
+}
+
+main{
+  width: 1200px;
+  height: 900px;
+  background: #cccccc;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.app_name{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #88b88a;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 2rem;
+}
+
+header{
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  background: #66cbff;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.search{
+  position: relative
+}
+
+.search i{
+  position: absolute;
+  left: 100px;
+  top: 15px;
+}
+
+.search input{
+  font-size: 2rem;
+  outline: none;
+  border-radius: 20px;
+  float: right;
+  padding-left: 3rem;
+  width: 70%;
+}
+
+.top_buttons button{
+  font-size: 1.5rem;
+  background: #66cbff;
+  border: 1px solid black;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s;
+}
+
+.top_buttons button:hover{
+  color: white;
+  background: #00aaff;
+}
+
+.top_buttons button:first-of-type{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.top_buttons button:last-of-type{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.top_buttons .active{
+  background: #00aaff;
+  color: white;
+}
+
+section{
+  flex: 7;
+  overflow-y: scroll;
+}
+
+.task{
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  justify-content: space-around;
+  border-bottom: 2px solid black;
+}
+
+.task .left_side{
+  flex: 0.2;
+}
+
+.task .left_side i{
+  margin-left: 1rem;
+}
+
+.task .right_side i{
+  background: white;
+  margin-right: 2rem;
+  transform: scale(1.5);
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.task .right_side i:hover{
+  transform: scale(1.6);
+  background: #00aaff;
+}
+
+.task .task_name{
+  flex: 1;
+}
+
+.task .task_name h3{
+  font-size: 2rem;
+}
+
+.not_done{
+  background: #ff6666;
+}
+
+.in_process{
+  background: #ffff67;
+}
+
+.done{
+  background: #66ff66;
+}
+
+.done h3{
+  text-decoration: line-through;
+  color: gray;
+}
+
+footer{
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: #808080;
+}
+
+.add_button{
+  background: #ffcc66;
+  font-size: 2rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-right: 3rem;
+  padding: 1rem;
+}
+
+.add_button:hover{
+  box-shadow: 0px 2px 2px black;
+  color: white;
+}
+
+.modal{
+  background: rgba(0,0,0,.3);
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+.modal .form{
+  width: 1000px;
+  height: 400px;
+  background: lightgray;
+  margin: auto;
+  position: relative;
+  border-radius: 20px;
+  padding: 2rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.form h2{
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.modal .form .close{
+  position: absolute;
+  top: 0px;
+  background: rgba(0,0,0,0.5);
+  width: 3rem;
+  left: 0px;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 20px;
+}
+
+.modal .form input[type='text']{
+  margin: 0px auto 30px auto;
+  font-size: 2rem;
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  border: 0px solid transparent;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.progress_checkbox{
+  display: flex;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.modal .form input[type='checkbox']{
+  width: 2rem;
+  height: 2rem;
+}
+
+.modal .form label{
+  font-size: 1.5rem;
+  margin-right: 2rem;
+}
+
+.modal .button_done{
+  float: right;
+  background: #66ff66;
+}
